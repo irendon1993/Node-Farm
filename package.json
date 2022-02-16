@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/irendon1993/Node-Farm/issues"
   },
-  "homepage": "https://github.com/irendon1993/Node-Farm#readme"
+  "homepage": "https://github.com/irendon1993/Node-Farm#readme",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
