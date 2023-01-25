@@ -34,6 +34,8 @@ const url = require('url');
 
 /////////////////////////////////////
 // Server
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
   const pathName = req.url;
@@ -42,6 +44,9 @@ const server = http.createServer((req, res) => {
     res.end('This is the OVERVIEW!');
   } else if (pathName === '/product') {
     res.end('This is the PRODUCT!');
+  } else if (pathName === '/api') {
+    res.writeHead(200, { 'Content-type': 'application/json' });
+    res.end(data);
   } else {
     // declaring warning number and header object
     res.writeHead(404, {
